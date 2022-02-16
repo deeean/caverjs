@@ -1,0 +1,10 @@
+{
+  "name": "caverjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:deeean/caverjs.git",
+  "license": "MIT",
+  "devDependencies": {
+    "caver-js": "^1.6.8"
+  }
+}
