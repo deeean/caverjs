@@ -5,6 +5,7 @@
   "repository": "git@github.com:deeean/caverjs.git",
   "license": "MIT",
   "devDependencies": {
-    "caver-js": "^1.6.8"
+    "caver-js": "^1.6.8",
+    "prettier": "^2.5.1"
   }
 }
