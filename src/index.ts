@@ -1,1 +1,1 @@
-export * from './cores/Caver';
+export * from './core/Caver';

@@ -1,4 +1,4 @@
-import { Caver } from '~/cores/Caver';
+import { Caver } from '~/core/Caver';
 
 export class Klaytn {
   private caver: Caver;
