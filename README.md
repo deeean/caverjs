@@ -5,7 +5,9 @@
 
 ## Usage
 ```typescript
-const caver = new Caver(new Providers.HttpProvider('http://localhost:8551'));
+import Caver, { HttpProvider } from 'caverjs';
+
+const caver = new Caver(new HttpProvider('http://localhost:8551'));
 
 await caver.klay.getBlockNumber();
 
