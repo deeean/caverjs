@@ -37,9 +37,9 @@ export class HttpProvider implements Provider {
       body: JSON.stringify(data),
     });
 
-    const body: JsonRpc.JsonRpcResponse<T> = await response.json();
-    if (body.error) {
-      const { code, message } = body.error;
+    const jsonrpc: JsonRpc.JsonRpcResponse<T> = await response.json();
+    if (jsonrpc.error) {
+      const { code, message } = jsonrpc.error;
       switch (code) {
         case CaverErrorCode.DEFAULT_ERROR:
           throw new DefaultError(message);
@@ -56,6 +56,6 @@ export class HttpProvider implements Provider {
       }
     }
 
-    return body;
+    return jsonrpc;
   }
 }

@@ -5,7 +5,7 @@ let websocket: Caver<WebSocketProvider>;
 
 beforeEach(() => {
   http = new Caver(new HttpProvider('http://localhost:8551'));
-  websocket = new Caver(new WebSocketProvider('ws://localhost:8551'));
+  websocket = new Caver(new WebSocketProvider('ws://localhost:8552'));
 });
 
 describe('Net', () => {
@@ -32,7 +32,6 @@ describe('Net', () => {
       const getPeerCountByType = await http.net.getPeerCountByType();
 
       expect(getPeerCountByType.pn).toBeGreaterThanOrEqual(0);
-      expect(getPeerCountByType.en).toBeGreaterThanOrEqual(0);
       expect(getPeerCountByType.total).toBeGreaterThanOrEqual(0);
     });
   });
@@ -60,7 +59,6 @@ describe('Net', () => {
       const getPeerCountByType = await websocket.net.getPeerCountByType();
 
       expect(getPeerCountByType.pn).toBeGreaterThanOrEqual(0);
-      expect(getPeerCountByType.en).toBeGreaterThanOrEqual(0);
       expect(getPeerCountByType.total).toBeGreaterThanOrEqual(0);
     });
   });
