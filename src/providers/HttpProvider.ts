@@ -1,5 +1,5 @@
 import * as JsonRpc from '~/jsonrpc';
-import { Provider, ProviderType } from '~/providers/Provider';
+import { Provider } from '~/providers/Provider';
 import {
   CaverErrorCode,
   DefaultError,
@@ -12,7 +12,6 @@ import {
 
 export class HttpProvider implements Provider {
   id = 0;
-  type: ProviderType = 'http';
   rawurl: string;
   headers: { [key: string]: string };
 
