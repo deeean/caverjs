@@ -1,4 +1,4 @@
-export type JsonRpcValue = number | string | boolean;
+export type JsonRpcValue = number | string | boolean | null;
 
 export enum JsonRpcVersion {
   V1 = '1.0',
@@ -12,8 +12,14 @@ export interface JsonRpcPayload {
   params: Array<JsonRpcValue>;
 }
 
+export interface JsonRpcError {
+  code: number;
+  message: string;
+}
+
 export interface JsonRpcResponse<T = unknown> {
   id: number;
   jsonrpc: JsonRpcVersion;
   result: T;
+  error?: JsonRpcError;
 }
