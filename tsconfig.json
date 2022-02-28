@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "module": "commonjs",
+    "module": "es2015",
     "declaration": true,
+    "declarationDir": "dist",
+    "moduleResolution": "node",
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2015",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -17,13 +19,20 @@
     "skipLibCheck": true,
     "paths": {
       "~/*": ["src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths",
+        "exclude": ["*"]
+      }
+    ]
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "tests",
-    "node_modules",
-  ],
-  "include": [
-    "./src/**/*"
+    "example",
+    "node_modules"
   ]
 }

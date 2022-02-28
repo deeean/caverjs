@@ -1,5 +1,5 @@
 import { Provider } from '~/providers/Provider';
-import { Block, BlockNumber, RpcTransaction, Syncing } from '~/types';
+import { Block, BlockNumber, CallInput, RpcTransaction, Syncing } from '~/types';
 import { Extension } from '~/api/Extension';
 import BigNumber from 'bignumber.js';
 import * as JsonRpc from '~/jsonrpc';
@@ -50,6 +50,15 @@ export class Klay<T extends Provider> extends Extension<T> {
     ]);
 
     return new BigNumber(balance.result);
+  }
+
+  async call<T>(input: CallInput, blockNumber: BlockNumber = 'latest') {
+    // Transformer.transform(input);
+    const call: JsonRpc.JsonRpcResponse<T> = await this.caver.provider.execute('klay_call', [
+      input as any,
+      blockNumber,
+    ]);
+    return call.result;
   }
 
   async getBlockByNumber(blockNumber: BlockNumber, withTransactions?: false): Promise<Block>;

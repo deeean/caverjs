@@ -3,3 +3,4 @@ export * from '~/types/BlockNumber';
 export * from '~/types/Transaction';
 export * from '~/types/Signature';
 export * from '~/types/Syncing';
+export * from '~/types/CallInput';

@@ -1,2 +1,2 @@
-export { Caver } from '~/core';
-export * as Providers from '~/providers';
+export { Caver as default } from '~/core';
+export { HttpProvider } from '~/providers';
