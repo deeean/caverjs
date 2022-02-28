@@ -6,7 +6,8 @@
 ## Usage
 ```typescript
 const caver = new Caver(new Providers.HttpProvider('http://localhost:8551'));
-```
 
-## Removed features
-- ipc
+await caver.klay.getBlockNumber();
+
+await caver.net.getId();
+```
