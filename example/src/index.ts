@@ -1,7 +1,8 @@
-// import Caver, { HttpProvider } from 'caverjs';
 import Caver, { HttpProvider } from 'caverjs';
-import { encode } from 'js-base64';
 
-async function bootstrap() {}
+async function bootstrap() {
+  const caver = new Caver(new HttpProvider('http://localhost:8551'));
+  await caver.rpc.klay.getBlockNumber();
+}
 
 bootstrap();
