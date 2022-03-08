@@ -1,0 +1,7 @@
+.idea
+.vscode
+.DS_Store
+.rollup.cache
+node_modules
+yarn-error.log
+src
